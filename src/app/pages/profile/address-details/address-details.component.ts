@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Address } from 'src/app/common/models/address';
 
 @Component({
   selector: 'app-address-details',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./address-details.component.scss']
 })
 export class AddressDetailsComponent {
-
+  @Input() address: Address | undefined;
 }

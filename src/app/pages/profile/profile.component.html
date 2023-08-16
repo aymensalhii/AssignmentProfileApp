@@ -1,1 +1,101 @@
-<p>profile works!</p>
+<div class="main-content" *ngIf="selectedUser">
+    <div class="row mx-0 col-12">
+        <div class="col-md-3 mt-4 p-1 users-list-container">
+            <div class="card users-list-card border-0 box-shadow">
+                <div class="card-header pe-2 d-flex">
+                    <h5 class="card-title me-auto">Users</h5>
+                    <button class="btn btn-sm btn-primary"><i class="bi bi-search"></i></button>
+                </div>
+                <div class="card-body p-0">
+                    <div class="list-group list-group-flush">
+                        <a (click)="fetchUserDetails(user!.id)" *ngFor="let user of users" class="list-group-item list-group-item-action" [ngClass]="{'active': user?.id === selectedUser.id}">
+                            <div class="avatar-box box-shadow"><i class="bi bi-person"></i></div>
+                            <div class="name-box">
+                                <h6 class="user-name">{{user.name}}</h6>
+                                <small class="user-email">{{user.email}}</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-users px-0 px-md-3 mt-3">
+            <div class="btn-group col-12">
+                <button type="button" class="btn btn-light text-start bg-white box-shadow dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{selectedUser.name}}
+                </button>
+                <ul class="dropdown-menu col-12">
+                    <li><a class="dropdown-item cursor-pointer" *ngFor="let user of users" (click)="fetchUserDetails(user.id)">{{user.name}}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-1 px-0 px-md-3 profile-data">
+            <div class="row mb-3 mx-0">
+                <div class="card border-0 box-shadow col">
+                    <div class="card-body d-flex">
+                        <div class="d-flex me-auto">
+                            <div class="avatar-box mx-md-3 shadow"><i class="bi bi-person"></i></div>
+                            <div class="name-box">
+                                <h6 class="card-title">{{selectedUser.name}}</h6>
+                                <small class="user-mail">{{selectedUser.email}}</small>
+                            </div>
+                        </div>
+                        <div class="website-link my-auto">
+                            <a href="https://www.{{selectedUser.website}}" target="_blank" class="link"><i class="bi bi-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mx-0 col-12">
+                <div class="col-sm-7 ps-sm-0 px-0 mb-3 pe-sm-1">
+                    <form [formGroup]="ProfileForm">
+                        <div class="card border-0 pt-3 box-shadow">
+                            <div class="card-header border-0">
+                                <h6 class="card-title">General Details</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row col-12 mx-0">
+                                    <div class="mb-3 col-lg-6 col-md-12 col-sm-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" formControlName="name" id="name" placeholder="John Doe">
+                                    </div>
+                                    <div class="mb-3 col-lg-6 col-md-12 col-sm-6">
+                                        <label for="bs" class="form-label">Username</label>
+                                        <input type="text" class="form-control" formControlName="username" id="bs" placeholder="johndoe">
+                                    </div>
+                                </div>
+                                <div class="row col-12 mx-0">
+                                    <div class="mb-3 col-12">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="text" class="form-control" formControlName="email" id="email" placeholder="JohnDoe@mail.com">
+                                    </div>
+                                </div>
+                                <div class="row col-12 mx-0">
+                                    <div class="mb-3 col-lg-6 col-md-12 col-sm-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="text" class="form-control" formControlName="phone" id="phone" placeholder="JohnDoe@mail.com">
+                                    </div>
+                                    <div class="mb-3 col-lg-6 col-md-12 col-sm-6">
+                                        <label for="website" class="form-label">Website</label>
+                                        <input type="text" class="form-control" formControlName="website" id="website" placeholder="JohnDoe@mail.com">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-end">
+                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-5 mb-3 ps-sm-1 px-0 pe-sm-0" *ngIf="selectedUser">
+                    <app-company-details [company]="selectedUser!.company"></app-company-details>
+                </div>
+            </div>
+            <div class="row mx-0 mb-3 col-12">
+                <div class="card px-0 border-0 box-shadow address-container">
+                    <app-address-details [address]="selectedUser.address"></app-address-details>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

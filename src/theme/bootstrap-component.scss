@@ -1,0 +1,79 @@
+.card {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+.card,
+.card-header,
+.card-footer {
+    background: var(--card-bg) !important;
+}
+
+.dropdown-menu {
+    background: var(--card-bg) !important;
+    .dropdown-item {
+        color: var(--main-color) !important;
+        &:hover {
+            background: rgba(0, 0, 0, .15);
+        }
+    }
+    
+}
+
+.form-control {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    color: var(--main-color) !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: var(--card-bg) !important;
+    border-bottom: 3px solid var(--input-border) !important;
+    &:focus {
+        border-color: var(--main-bg) !important;
+    }
+}
+
+
+.btn[type="submit"] {
+    box-shadow: 0 3px 3px 0 rgba(52,71,103,.15), 
+    0 3px 1px -2px rgba(52,71,103,.2), 
+    0 1px 5px 0 rgba(52,71,103,.15) !important;
+
+    &:hover,
+    &:active {
+        box-shadow: 15px 6px 12px -5px rgba(52,71,103,.15), -2px 3px 0px -5px rgba(52,71,103,.25), 0 4px 10px 0 rgba(52,71,103,.5) !important;
+    }
+}
+
+.btn:not([type="submit"]) {
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background: var(--main-bg) !important;
+    border-color: var(--main-bg) !important;
+    &:hover {
+        background: var(--main-bg-hover) !important;
+        border-color: var(--main-bg-hover) !important;
+    }
+}
+
+.card-title {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 27.5px !important;
+    word-spacing: 0px !important;
+    color: var(--card-title) !important;
+    text-decoration: none solid rgb(52, 71, 103) !important;
+}
+.form-label {
+    font-size: 14px;
+    line-height: 1px;
+    word-spacing: 0px;
+    transition: all .3s ease;
+    color: var(--label-color);
+}
+
+.box-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+}

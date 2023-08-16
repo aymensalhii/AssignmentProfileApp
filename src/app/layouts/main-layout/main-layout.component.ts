@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from 'src/app/common/services/theme.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutComponent {
 
+  constructor(
+    public themeService: ThemeService
+  ) {}
 }

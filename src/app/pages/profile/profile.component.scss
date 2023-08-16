@@ -1,0 +1,137 @@
+.main-content {
+    margin-top: 48px;
+}
+.users-list-container {
+    min-width: 280px;
+    height: calc(100vh - 82px);
+
+    .users-list-card {
+        .card {
+            overflow: hidden;
+        }
+        .card-header {
+            height: 48px;
+            line-height: 48px;
+        }
+        .card-body {
+            height: calc(100vh - 142px);
+            overflow-x: hidden;
+            overflow-y: auto;
+            .list-group-item {
+                cursor: pointer;
+                position: relative;
+                display: flex;   
+                background: var(--card-bg);
+                .user-name {
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 21px;
+                    margin: 0;
+                    color: var(--muted-color);
+                }
+                .user-email {
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 15px;
+                    white-space: nowrap;
+                    color: var(--card-title);
+                }
+            }
+    
+            .active {
+                background: var(--main-bg);
+                border-color: var(--main-bg);
+                .user-name,
+                .user-email {
+                    color: var(--secondary-color-hover);
+                }
+                .bi {
+                    color: var(--main-bg);
+                }
+            }
+        }
+    }
+
+    
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.dropdown-users {
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.profile-data {
+    margin-top: 24px;
+    min-height: calc(100vh - 72px);
+    .website-link {
+        font-size: 24px;
+        .link {
+            color: var(--link-color);
+            &:hover {
+                color: var(--main-bg-hover);
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        margin-top: 7px;
+    }
+}
+
+.avatar-box {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    min-height: 58px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #f7f8ff;
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+.name-box {
+    padding-top: 10px;
+    .card-title {
+        margin: 0;
+    }
+    .user-mail {
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--muted-color);
+    }
+}
+
+.users-list-container .card-body {
+    &::-webkit-scrollbar {
+        width: 9px;
+        border-radius: 8px;
+    }
+    
+        /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f7f8ff00; 
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--muted-color); 
+        border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--main-bg); 
+    }
+}
+
+.address-container {
+    overflow: hidden !important;
+}

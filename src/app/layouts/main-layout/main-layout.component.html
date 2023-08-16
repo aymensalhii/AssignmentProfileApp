@@ -1,4 +1,4 @@
-<div class="main-layout">
+<div class="main-layout" [ngClass]="{'light': themeService.mode, 'dark': !themeService.mode}">
     <app-main-header></app-main-header>
     <div class="container-lg">
         <router-outlet></router-outlet>
