@@ -1,1 +1,27 @@
-<p>company-details works!</p>
+<div class="card py-3 border-0 box-shadow">
+    <form [formGroup]="companyForm">
+
+        <div class="card-header border-0">
+            <h6 class="card-title">Company Details</h6>
+        </div>
+        <div class="card-body">
+            
+                <div class="mb-3">
+                    <label for="name" class="form-label">Company Name</label>
+                    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Company xyz">
+                </div>
+                <div class="mb-3">
+                    <label for="bs" class="form-label">BS</label>
+                    <input type="text" class="form-control" formControlName="bs" id="bs" placeholder="placeholder">
+                </div>
+                <div class="mb-3">
+                    <label for="catchPhrase" class="form-label">Catch Phrase</label>
+                    <input type="text" class="form-control" formControlName="catchPhrase" id="catchPhrase" placeholder="Company xyz">
+                </div>
+        </div>
+
+        <div class="card-footer border-0 text-end">
+            <button class="btn btn-primary" type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,36 @@
-<p>address-details works!</p>
+<form [formGroup]="addressForm">
+    <div class="card-body p-0 row mx-0 col-12">
+        <div class="col-lg-7 px-3 pt-3">
+            <div class="card-header border-0">
+                <h6 class="card-title">Address</h6>
+            </div>
+            <div class="row mx-0 col-12">
+                <div class="mb-3 col-sm-6">
+                    <label for="street" class="form-label">Street</label>
+                    <input type="text" class="form-control" formControlName="street" id="street" placeholder="Streat xyz">
+                </div>
+                <div class="mb-3 col-sm-6">
+                    <label for="suite" class="form-label">Suite</label>
+                    <input type="text" class="form-control" formControlName="suite" id="suite" placeholder="placeholder">
+                </div>
+            </div>
+            <div class="row mx-0 col-12">
+                <div class="mb-3 col-sm-6">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" formControlName="city" id="city" placeholder="Company xyz">
+                </div>
+                <div class="mb-3 col-sm-6">
+                    <label for="zipcode" class="form-label">Zip Code</label>
+                    <input type="text" class="form-control" formControlName="zipcode" id="zipcode" placeholder="Company xyz">
+                </div>
+            </div>            
+            <div class="card-footer border-0 text-end">
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+            </div>
+        </div>
+        <div class="col-lg-5 pe-0 me-0 ps-lg-1 ps-0">
+            <div class="map-container" #map></div>
+        </div>
+    </div>
+    
+</form>

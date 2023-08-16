@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from 'src/app/common/services/theme.service';
 
 @Component({
   selector: 'app-main-header',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MainHeaderComponent {
 
+  constructor(
+    public themeService: ThemeService
+  ) {}
 }
